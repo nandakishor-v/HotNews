@@ -1,4 +1,4 @@
-package com.example.hotnews.ui.theme
+package com.example.hotnews.presentation.theme
 
 import androidx.compose.ui.graphics.Color
 
