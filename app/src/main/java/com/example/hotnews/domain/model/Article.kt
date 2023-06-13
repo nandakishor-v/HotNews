@@ -1,5 +1,7 @@
 package com.example.hotnews.domain.model
 
+
+
 data class Article(
     val author: String?,
     val content: String?,
@@ -8,5 +10,5 @@ data class Article(
     val source: Source,
     val title: String,
     val url: String,
-    val urlToImage: String?
+    val urlToImage: String
 )
