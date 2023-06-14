@@ -21,6 +21,6 @@ fun NewsScreen(
             Text(text = article.title)
 
         }
-
+fghfh
     }
 }
