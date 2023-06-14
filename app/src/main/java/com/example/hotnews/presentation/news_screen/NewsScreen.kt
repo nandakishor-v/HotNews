@@ -17,8 +17,8 @@ fun NewsScreen(
         verticalArrangement = Arrangement.spacedBy(16.dp),
         contentPadding = PaddingValues(16.dp) ){
         items(viewModel.articles){
-          item: Article ->  
-            Text(text = Article.title)
+           article ->
+            Text(text = article.title)
 
         }
 
