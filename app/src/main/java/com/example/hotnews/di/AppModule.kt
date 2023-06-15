@@ -2,8 +2,8 @@ package com.example.hotnews.di
 
 import com.example.hotnews.data.remote.NewsApi
 import com.example.hotnews.data.remote.NewsApi.Companion.BASE_URL
-import com.example.hotnews.data.repository.NewsRepositoryImp
 import com.example.hotnews.domain.repository.NewsRepository
+import com.example.hotnews.data.repository.NewsRepositoryImp
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
