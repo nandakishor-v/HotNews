@@ -18,6 +18,10 @@ class NewsScreenViewModel @Inject constructor(
     private val newsRepository: NewsRepository
 ) : ViewModel() {
     var articles by mutableStateOf<List<Article>>(emptyList())
+
+    init{
+        getNewsArticles(category = "general")
+    }
     private fun getNewsArticles(category: String){
        viewModelScope.launch {
            val result = newsRepository.getTopHeadlines(category = category)

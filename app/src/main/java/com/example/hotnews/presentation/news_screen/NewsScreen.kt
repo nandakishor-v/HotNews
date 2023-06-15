@@ -7,11 +7,12 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.hotnews.domain.model.Article
 
 @Composable
 fun NewsScreen(
-    viewModel: NewsScreenViewModel
+    viewModel: NewsScreenViewModel = hiltViewModel()
 ){
     LazyColumn(
         verticalArrangement = Arrangement.spacedBy(16.dp),
@@ -21,6 +22,5 @@ fun NewsScreen(
             Text(text = article.title)
 
         }
-fghfh
     }
 }
