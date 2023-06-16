@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.hotnews.domain.model.Article
+import com.example.hotnews.presentation.components.NewsArticleCard
 
 @Composable
 fun NewsScreen(
@@ -19,7 +20,10 @@ fun NewsScreen(
         contentPadding = PaddingValues(16.dp) ){
         items(viewModel.articles){
            article ->
-            Text(text = article.title)
+            NewsArticleCard(
+                article = article,
+                onCardClicked = {}
+            )
 
         }
     }
