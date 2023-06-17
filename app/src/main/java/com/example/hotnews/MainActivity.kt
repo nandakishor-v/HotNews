@@ -19,6 +19,8 @@ class MainActivity : ComponentActivity() {
                 NewsScreen(
                     state = viewModel.state,
                     onEvent = viewModel::onEvent
+
+
                 )
             }
 
