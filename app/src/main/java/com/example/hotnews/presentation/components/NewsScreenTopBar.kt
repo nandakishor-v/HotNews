@@ -16,6 +16,7 @@ import androidx.compose.ui.text.font.FontWeight
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun NewsScreenTopBar(
+    scrollBehavior: TopAppBarScrollBehavior,
     onSearchIconClicked: () -> Unit
 ) {
     TopAppBar(
