@@ -3,6 +3,7 @@ package com.example.hotnews.presentation.news_screen
 import android.media.MediaDrm.OnEventListener
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
@@ -11,6 +12,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -19,6 +21,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.snapshotFlow
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -26,6 +29,7 @@ import com.example.hotnews.domain.model.Article
 import com.example.hotnews.presentation.components.CategoryTabRow
 import com.example.hotnews.presentation.components.NewsArticleCard
 import com.example.hotnews.presentation.components.NewsScreenTopBar
+import com.example.hotnews.presentation.components.RetryContent
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
@@ -68,19 +72,48 @@ fun NewsScreen(
                 pageCount = categories.size,
                 state = pagerState
                 ) {
-                LazyColumn(
-                    verticalArrangement = Arrangement.spacedBy(16.dp),
-                    contentPadding = PaddingValues(16.dp),
-                    modifier = Modifier.padding(padding)
-                ) {
-                    items(state.articles) { article ->
-                        NewsArticleCard(
-                            article = article,
-                            onCardClicked = {}
-                        )
+                NewsArticlesList(state = state ,
+                    onCardClicked ={},
+                    onRetry = {
+                        onEvent(NewsScreenEvent.OnCategoryChanged(state.category))
                     }
-                }
+                )
+
             }
+        }
+    }
+}
+@Composable
+fun NewsArticlesList(
+    state : NewsScreenState,
+    onCardClicked:(Article) -> Unit,
+    onRetry:() -> Unit
+
+){
+    LazyColumn(
+        verticalArrangement = Arrangement.spacedBy(16.dp),
+        contentPadding = PaddingValues(16.dp),
+
+    ) {
+        items(state.articles) { article ->
+            NewsArticleCard(
+                article = article,
+                onCardClicked = onCardClicked
+            )
+        }
+    }
+    Box(
+        modifier = Modifier.fillMaxSize(),
+        contentAlignment = Alignment.Center
+    ) {
+        if (state.isLoading) {
+            CircularProgressIndicator()
+        }
+        if (state.error != null) {
+            RetryContent(
+                error = state.error,
+                onRetry = onRetry
+            )
         }
     }
 }
