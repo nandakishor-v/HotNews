@@ -212,6 +212,7 @@ fun NewsArticleList(
                 error = state.error,
                 onRetry = onRetry
             )
+
         }
     }
 }
