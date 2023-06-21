@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "893896599214",
+    "project_id": "hotnews-3bd71",
+    "storage_bucket": "hotnews-3bd71.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:893896599214:android:ecb3eb53c62c3cc7696f3f",
+        "android_client_info": {
+          "package_name": "com.example.hotnews"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "893896599214-9hqijm3h7u91p19kl9v1j1u9l4h5rtof.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDa-dTR7oWxWPfqqIC0FTN9Dm6u7E-TYpc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "893896599214-9hqijm3h7u91p19kl9v1j1u9l4h5rtof.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
