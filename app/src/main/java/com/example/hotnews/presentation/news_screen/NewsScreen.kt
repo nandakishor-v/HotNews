@@ -215,4 +215,3 @@ fun NewsArticleList(
         }
     }
 }
-kkkkkkkkkkk
