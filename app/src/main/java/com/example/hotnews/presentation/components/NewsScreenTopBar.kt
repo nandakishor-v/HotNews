@@ -31,6 +31,7 @@ fun NewsScreenTopBar(
 ) {
     val context = LocalContext.current
     TopAppBar(
+        scrollBehavior = scrollBehavior,
         title = { Text(text = "HotNews", fontWeight = FontWeight.Bold)},
         actions = {
             IconButton(onClick = onSearchIconClicked) {
