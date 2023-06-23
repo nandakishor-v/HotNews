@@ -143,6 +143,7 @@ fun NewsScreen(
                                     delay(500)
                                     focusRequester.requestFocus()
                                 }
+
                             }
                         )
                     }
